@@ -11,3 +11,4 @@ Steps to use:
 -   NOT IN TERMINAL - create database
 -   NOT IN TERMINAL - update DB_DATABASE=
 -   php artisan migrate
+-   php artisan serve

@@ -17,6 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/gpstes', function () {
+    return 'test';
+});
+
+Route::prefix('/gps-test')->middleware('auth')->group(function() {
+    Route::get('/', function() {
+        return 'test';
+    });
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
