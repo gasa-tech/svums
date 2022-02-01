@@ -14,7 +14,7 @@
     <link href="{{ asset('css/frontend.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body onload="startTime()">
+<body >
     <div class="row">
         <div class="col-md-7 login-img">
            <div class="card mt-3 " style="width: 40rem;margin-left:20%;opacity:60%;color:white;background-color: rgba(0,0,0,.6);">
@@ -70,13 +70,14 @@
 </body>
 <script type="text/javascript">
     var date = new Date();
-
+    var day =date.getDay();
     function daysToSrting() {
         const daysOfWeek = ['Sunday', 'Monday','Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        return daysOfWeek[date.getDay()]
+        return daysOfWeek[day]
+        
     }
     function showTime(){
-        //   var d = date.getDay();
+       
         var h = date.getHours(); // 0 - 23
         var m = date.getMinutes(); // 0 - 59
         var s = date.getSeconds(); // 0 - 59
@@ -99,10 +100,11 @@
         document.getElementById("MyClockDisplay").innerText = time;
         document.getElementById("MyClockDisplay").textContent = time;
         
-        setTimeout(showTime, 1000);
+        setTimeout(showTime(), 1000);
   
-}
+    }   
 
-showTime();
+    showTime();
+   
   </script>
 </html>
