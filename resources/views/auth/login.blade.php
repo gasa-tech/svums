@@ -17,7 +17,7 @@
 <body >
     <div class="row">
         <div class="col-md-7 login-img">
-           <div class="card mt-3 " style="width: 40rem;margin-left:20%;opacity:60%;color:white;background-color: rgba(0,0,0,.6);">
+           <div class="card mt-3 " style="width: 60%;margin-left:20%;opacity:60%;color:white;background-color: rgba(0,0,0,.6);">
                 <div class="card-body">
                     <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
                 </div>
