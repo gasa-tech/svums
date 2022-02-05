@@ -10,9 +10,9 @@ class VehicleController extends Controller
 
     public function index()
     {
-        return view('vehicles.index');
+        $vehicles = Vehicle::get();
+        return view('vehicles.index', compact('vehicles'));
     }
-
 
     public function create()
     {
@@ -21,17 +21,29 @@ class VehicleController extends Controller
 
     public function store(Request $request)
     {
-        //
+        
+        $vehicle = new Vehicle;
+        $vehicle->brand = $request->brand;
+        $vehicle->model = $request->model;
+        $vehicle->type = $request->type;
+        $vehicle->color = $request->color;
+        $vehicle->plate_number = $request->plate_number;
+        $vehicle->cr = $request->cr;
+        $vehicle->odometer = $request->odometer;
+        $vehicle->save();
+
+        return redirect()->back()->with('success','Vehicle added successfully!');
     }
 
     public function show(Vehicle $vehicle)
     {
-        //
+        
     }
 
     public function edit(Vehicle $vehicle)
     {
-        //
+        $vehicle = Vehicle::find($id);
+        return view('vehicles._update',compact('vehicle'));
     }
 
     public function update(Request $request, Vehicle $vehicle)
