@@ -17,7 +17,7 @@
 
         </div>
     </div>
-    <div class="bg-app-secondary">
+    <div class="bg-app-secondary" style="height: 1000px;">
         <div class="custom-content-body">
             <div class="card">
                 <div class="card-body">
@@ -35,8 +35,9 @@
                         <td></td>
                         <td></td>
                         <td></td>
-
+                        <td></td>
                     </tbody>
+                    
                 </table>
                 </div>
             </div>
