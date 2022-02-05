@@ -11,8 +11,7 @@
           @yield('modalContent')
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-outline-success custom-btn-submit" form="createForm">Update changes</button>
+          <button type="submit" class="btn btn-outline-success custom-btn-submit" form="updateForm">Update changes</button>
         </div>
       </div>
     </div>

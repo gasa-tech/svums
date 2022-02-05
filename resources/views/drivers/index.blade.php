@@ -45,8 +45,12 @@
                                     </button>
                                     <div class="dropdown-menu" style="min-width: 80px !important;">
                                         <button type="button" class="dropdown-item btn_view" data-url="{{ route('driver.show',$driver->id) }}"><i class="fa fa-search"></i> View</button>
-                                        <button type="button" class="dropdown-item" data-url="{{ route('driver.edit',$driver->id) }}"><i class="fa fa-pencil"></i> Update</button>
-                                        <button type="button" class="dropdown-item delete"><i class="fa fa-trash"></i> Delete</button>
+                                        <button type="button" class="dropdown-item btn_update" data-url="{{ route('driver.edit',$driver->id) }}"><i class="fa fa-pencil"></i> Update</button>
+                                        <form action="{{ route('driver.destroy',$driver->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="button" class="dropdown-item btn_delete"><i class="fa fa-trash"></i> Delete</button>
+                                        </form>
                                     </div>
                                 </div>
                             </td>
@@ -73,6 +77,23 @@
                 $('#showModal').modal('show');
             }
         });
-   })
+    })
+   $('.btn_update').click(function(e) {
+        var div = $('.append-div');
+        div.empty();
+        var url = $(this).data('url');
+        $.ajax({
+            url: url,
+            success:function(data){
+                div.append(data);
+                $('#updateModal').modal('show');
+            }
+        });
+    })
+    $('.btn_delete').click(function(e) {
+        if (confirm('Are you sure you want to delete this record?') == true) {
+            $(this).closest('form').submit();
+        }
+    })
 </script>
 @endsection
