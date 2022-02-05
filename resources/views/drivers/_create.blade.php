@@ -11,13 +11,13 @@
             <div class="input-group-prepend">
             <span class="input-group-text" >Full Name</span>
             </div>
-            <input type="text" class="form-control" name="name" placeholder="Full Name" required>
+            <input type="text" class="form-control" name="name" required>
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
             <span class="input-group-text" >Email</span>
             </div>
-            <input type="email" class="form-control" name="email" placeholder="Email" required>
+            <input type="email" class="form-control" name="email" required>
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">

@@ -44,10 +44,9 @@
                                     <i class="fa fa-cogs"></i>
                                     </button>
                                     <div class="dropdown-menu" style="min-width: 80px !important;">
-                                    <a class="dropdown-item" href="#"><i class="fa fa-search"></i> View</a>
-                                    <a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Update</a>
-                                    <a class="dropdown-item" href="#"><i class="fa fa-trash"></i> Delete</a>
-                            
+                                        <button type="button" class="dropdown-item btn_view" data-url="{{ route('driver.show',$driver->id) }}"><i class="fa fa-search"></i> View</button>
+                                        <button type="button" class="dropdown-item" data-url="{{ route('driver.edit',$driver->id) }}"><i class="fa fa-pencil"></i> Update</button>
+                                        <button type="button" class="dropdown-item delete"><i class="fa fa-trash"></i> Delete</button>
                                     </div>
                                 </div>
                             </td>
@@ -59,10 +58,21 @@
             </div>
         </div>
     </div>
-    <div class="append-driver"></div>
+    <div class="append-div"></div>
 @endsection
-@section('script')
+@section('scripts')
 <script type="text/javascript">
-   
+   $('.btn_view').click(function(e) {
+        var div = $('.append-div');
+        div.empty();
+        var url = $(this).data('url');
+        $.ajax({
+            url: url,
+            success:function(data){
+                div.append(data);
+                $('#showModal').modal('show');
+            }
+        });
+   })
 </script>
 @endsection

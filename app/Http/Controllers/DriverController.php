@@ -45,7 +45,7 @@ class DriverController extends Controller
 
     public function show(Driver $driver)
     {
-        //
+        return view('drivers._show',compact('driver'));
     }
 
     public function edit(Driver $driver)
