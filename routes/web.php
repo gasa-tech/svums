@@ -25,4 +25,5 @@ Route::middleware('auth')->group(function() {
     Route::resource('vehicles', App\Http\Controllers\VehicleController::class);
     Route::resource('user', App\Http\Controllers\UserController::class);
     Route::resource('passenger', App\Http\Controllers\PassengerController::class);
+    Route::resource('driver', App\Http\Controllers\DriverController::class);
 });
