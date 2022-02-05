@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@include('vehicles._create')
+    @include('vehicles._create')
     <div class="p-4">
         <h2 class="">Vehicles</h2>
         <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#createModal">

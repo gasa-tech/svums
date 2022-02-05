@@ -63,3 +63,8 @@
     font-weight: 600;
     padding: 0.2rem;
 }
+.custom-btn-submit {
+    border: #04aa6d solid 0.2rem;
+    color: #000000;
+    font-weight: 600;
+}
