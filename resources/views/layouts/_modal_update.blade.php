@@ -1,4 +1,4 @@
-<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-@yield('modalSize')" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -11,8 +11,7 @@
           @yield('modalContent')
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-outline-success custom-btn-submit" form="createForm">Save</button>
+          <button type="submit" class="btn btn-outline-success custom-btn-submit" form="updateForm">Update changes</button>
         </div>
       </div>
     </div>

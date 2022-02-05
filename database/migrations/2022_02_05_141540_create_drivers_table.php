@@ -23,6 +23,7 @@ class CreateDriversTable extends Migration
             $table->string('emergency_contact_person_contact_number')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

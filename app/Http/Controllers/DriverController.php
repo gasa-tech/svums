@@ -45,21 +45,35 @@ class DriverController extends Controller
 
     public function show(Driver $driver)
     {
-        //
+        return view('drivers._show',compact('driver'));
     }
 
     public function edit(Driver $driver)
     {
-        //
+        return view('drivers._update',compact('driver'));
     }
 
     public function update(Request $request, Driver $driver)
     {
-        //
+        $user = User::find($driver->user_id);
+        $user->name = $request->name;
+        $user->update();
+
+        $driver->user_id = $user->id;
+        $driver->birthdate = $request->birthdate;
+        $driver->contact_number = $request->contact_number;
+        $driver->emergency_contact_person = $request->emergency_contact_person;
+        $driver->emergency_contact_person_relationship = $request->emergency_contact_person_relationship;
+        $driver->emergency_contact_person_contact_number = $request->emergency_contact_person_contact_number;
+        $driver->update();
+
+        return redirect()->back()->with('success','Driver updated successfully!');
     }
 
     public function destroy(Driver $driver)
     {
-        //
+        User::find($driver->user_id)->delete();
+        $driver->delete();
+        return redirect()->back()->with('success','Driver deleted successfully!');
     }
 }

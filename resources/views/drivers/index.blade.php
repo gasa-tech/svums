@@ -44,10 +44,13 @@
                                     <i class="fa fa-cogs"></i>
                                     </button>
                                     <div class="dropdown-menu" style="min-width: 80px !important;">
-                                    <a class="dropdown-item" href="#"><i class="fa fa-search"></i> View</a>
-                                    <a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Update</a>
-                                    <a class="dropdown-item" href="#"><i class="fa fa-trash"></i> Delete</a>
-                            
+                                        <button type="button" class="dropdown-item btn_view" data-url="{{ route('driver.show',$driver->id) }}"><i class="fa fa-search"></i> View</button>
+                                        <button type="button" class="dropdown-item btn_update" data-url="{{ route('driver.edit',$driver->id) }}"><i class="fa fa-pencil"></i> Update</button>
+                                        <form action="{{ route('driver.destroy',$driver->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="button" class="dropdown-item btn_delete"><i class="fa fa-trash"></i> Delete</button>
+                                        </form>
                                     </div>
                                 </div>
                             </td>
@@ -59,10 +62,38 @@
             </div>
         </div>
     </div>
-    <div class="append-driver"></div>
+    <div class="append-div"></div>
 @endsection
-@section('script')
+@section('scripts')
 <script type="text/javascript">
-   
+   $('.btn_view').click(function(e) {
+        var div = $('.append-div');
+        div.empty();
+        var url = $(this).data('url');
+        $.ajax({
+            url: url,
+            success:function(data){
+                div.append(data);
+                $('#showModal').modal('show');
+            }
+        });
+    })
+   $('.btn_update').click(function(e) {
+        var div = $('.append-div');
+        div.empty();
+        var url = $(this).data('url');
+        $.ajax({
+            url: url,
+            success:function(data){
+                div.append(data);
+                $('#updateModal').modal('show');
+            }
+        });
+    })
+    $('.btn_delete').click(function(e) {
+        if (confirm('Are you sure you want to delete this record?') == true) {
+            $(this).closest('form').submit();
+        }
+    })
 </script>
 @endsection
