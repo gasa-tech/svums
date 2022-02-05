@@ -3,5 +3,5 @@
 @section('modalTitle','Create Vehicles')
 
 @section('modalContent')
-    input here ...
+    
 @endsection

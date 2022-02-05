@@ -68,3 +68,12 @@
     color: #000000;
     font-weight: 600;
 }
+.custom-footer {
+    background-color: #2B475E;
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+    color: #ffffff;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
