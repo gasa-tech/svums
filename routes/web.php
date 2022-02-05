@@ -23,4 +23,6 @@ Route::middleware('auth')->group(function() {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::resource('vehicles', App\Http\Controllers\VehicleController::class);
+    Route::resource('user', App\Http\Controllers\UserController::class);
+    Route::resource('passenger', App\Http\Controllers\PassengerController::class);
 });
