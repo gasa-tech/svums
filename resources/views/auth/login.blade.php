@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-sm-7 login-img">
            <div class="card mt-3" style="width: 40%;margin-left:30%;opacity:60%;color:white;background-color: rgba(0,0,0,.6);">
-                <div class="card-body">
+                <div class="card-body pt-2 py-2">
                     <div id="MyClockDisplay" class="text-center clock" onload="showTime()"></div>
                 </div>
            </div>
@@ -30,7 +30,7 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
                        
-                    <h4 style="margin-left: -10%;"><img src="{{ asset('img/logo.jpg') }}" alt="logo" width="170" height="100" style="align-content: left;"><b>Welcome to SVUMS Portal</b></h4>
+                    <h5 style="margin-left: -10%;"><img src="{{ asset('img/logo.jpg') }}" alt="logo" width="150" height="85" ><b>Welcome to SVUMS Portal</b></h5>
                     <div class="card">
                         <div class="card-body">
                           

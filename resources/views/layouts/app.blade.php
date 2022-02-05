@@ -84,6 +84,15 @@
         <main class="">
             @yield('content')
         </main>
+
+        <footer class="page-footer font-small special-color-dark pt-2"  style="background-color: #2B475E;position: fixed;left: 0;bottom: 0; width: 100%;">
+              
+                <div class="text-center py-2">© 2020 Copyright:
+                    <a href="https://gasa.tech">GASA.TECH</a>
+                  </div>
+              
+        </footer>
+
         @yield('scripts')
     </div>
 </body>
