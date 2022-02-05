@@ -17,6 +17,7 @@
 
         </div>
     </div>
+   
     <div class="bg-app-secondary">
         <div class="custom-content-body">
             <div class="card">
@@ -31,14 +32,18 @@
                         <th class="text-center" width="10%">Action</th>
                     </thead>
                     <tbody>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="text-right">
-                            <button class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i> Edit</button>
-                            <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Delete</button>
-                        </td>
+                        @foreach($users as $i => $user)
+                        <tr>
+                            <td>{{ ++$i }}</td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td></td>
+                            <td class="text-right">
+                                <button class="btn btn-sm btn-primary"><i class="fa fa-pencil"></i> Edit</button>
+                                <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Delete</button>
+                            </td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
                 </div>

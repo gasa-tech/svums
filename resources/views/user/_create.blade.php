@@ -1,19 +1,39 @@
-<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Create User</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
+@extends('layouts._modal_create')
+
+@section('modalTitle','Create User')
+@section('modalSize','l')
+
+@section('modalContent')
+<form id="createForm" method="post" action="{{ route('user.store')}}" autocomplete="off">
+  @csrf
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" >Full Name</span>
     </div>
+      <input type="text" class="form-control" name="name" placeholder="Full Name" required>
   </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" >Email</span>
+    </div>
+      <input type="email" class="form-control" name="email" placeholder="Email" required>
+  </div>
+ <!--  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <button class="btn btn-outline-secondary" type="button">Role</button>
+    </div>
+    <select class="custom-select" >
+      <option selected>Choose...</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div> -->
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" >Password</span>
+    </div>
+      <input type="password" class="form-control" name="password" placeholder="Password" required>
+  </div>
+</form>
+@endsection

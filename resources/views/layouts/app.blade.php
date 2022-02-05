@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-toaster@4.0.1/css/bootstrap-toaster.min.css" />
     <link href="{{ asset('css/frontend.css') }}" rel="stylesheet">
     <style>
         .row {
@@ -85,13 +86,31 @@
 
         <footer class="page-footer font-small special-color-dark pt-2"  style="background-color: #2B475E;left: 0;bottom: 0; width: 100%;">
               
-                <div class="text-center py-2">© 2020 Copyright:
+                <div class="text-center py-3">© 2020 Copyright:
                     <a href="https://gasa.tech">GASA.TECH</a>
-                  </div>
+                </div>
               
         </footer>
 
         @yield('scripts')
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-toaster@4.0.1/js/bootstrap-toaster.min.js"></script>
+        <script type="text/javascript">
+            let success = "{{ Session::get('success') }}"
+            if(success) {
+                Toast.setTheme(TOAST_THEME.DARK);
+                Toast.create('Success', success,TOAST_STATUS.SUCCESS, 10000);
+            }
+            let error = "{{ Session::get('error') }}"
+            if(error) {
+                Toast.setTheme(TOAST_THEME.DARK);
+                Toast.create('Error', error,TOAST_STATUS.DANGER, 10000);
+            }
+            let info = "{{ Session::get('info') }}"
+            if(info) {
+                Toast.setTheme(TOAST_THEME.DARK);
+                Toast.create('Warning', info,TOAST_STATUS.WARNING, 10000);
+            }
+        </script>
     </div>
 </body>
 
