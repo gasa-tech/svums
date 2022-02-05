@@ -17,7 +17,7 @@
 
         </div>
     </div>
-    <div class="bg-app-secondary" style="height: 1000px;">
+    <div class="bg-app-secondary">
         <div class="custom-content-body">
             <div class="card">
                 <div class="card-body">
@@ -28,14 +28,26 @@
                         <th>Name</th>
                         <th>Type</th>
                         <th>Description</th>
-                        <th class="text-center">Action</th>
+                        <th class="text-center" width="7%">Action</th>
                     </thead>
                     <tbody>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>as</td>
+                        <td>as</td>
+                        <td>asas</td>
+                        <td>as</td>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <i class="fa fa-cogs"></i>
+                                </button>
+                                <div class="dropdown-menu" style="min-width: 80px ! important;">
+                                  <a class="dropdown-item" href="#"><i class="fa fa-search"></i> View</a>
+                                  <a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Update</a>
+                                  <a class="dropdown-item" href="#"><i class="fa fa-trash"></i> Delete</a>
+                        
+                                </div>
+                            </div>
+                        </td>
                     </tbody>
                     
                 </table>

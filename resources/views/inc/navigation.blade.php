@@ -12,7 +12,7 @@
                   <button class="btn btn-light svums-btn-nav"><i class="fas fa-car" ></i></button>
                   <p class="text-white">Vehicle</p>
                 </a>
-                <a class="col-md-3" href="">
+                <a class="col-md-3" href="{{ route('driver.index') }}">
                   <button class="btn btn-light svums-btn-nav"><i class="fas fa-users"></i></button>
                   <p class="text-white">Driver</p>
                 </a>
