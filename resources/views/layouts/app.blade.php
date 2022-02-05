@@ -81,7 +81,7 @@
             @endguest
           </nav>
          @include('inc.navigation')
-        <main class="p-4">
+        <main class="">
             @yield('content')
         </main>
         @yield('scripts')
