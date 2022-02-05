@@ -32,7 +32,7 @@
                   <button class="btn btn-light svums-btn-nav"><i class="fas fa-ticket-alt"></i></button>
                   <p class="text-white">Ticket</p>
                  </a>
-                 <a class="col-md-3" href="">
+                 <a class="col-md-3" href="{{route('user.index')}}">
                   <button class="btn btn-light svums-btn-nav"><i class="fas fa-user-cog"></i></button>
                   <p class="text-white">User</p>
                  </a>
